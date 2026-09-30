@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d0c">
+  <meta name="description" content="Fitness Mini — 简单、离线可用的个人健身记录工具">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Fitness Mini">
+  <title>Fitness Mini</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0d0c'/%3E%3Cpath d='M15 25v14m8-19v24m18-24v24m8-19v14M23 32h18' stroke='%23d9ff43' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="icon-button back-button hidden" id="back-button" aria-label="返回">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <a class="brand" href="#home" aria-label="Fitness Mini 首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Fitness Mini</span>
+      </a>
+      <span class="live-badge hidden" id="live-badge"><i></i> 训练中</span>
+    </header>
+
+    <main id="app" tabindex="-1" aria-live="polite"></main>
+
+    <nav class="bottom-nav" id="bottom-nav" aria-label="主导航">
+      <a href="#home" data-route="home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/></svg>
+        <span>首页</span>
+      </a>
+      <a href="#workout" data-route="workout">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8v8M3 10v4m15-6v8m3-6v4M6 12h12"/></svg>
+        <span>训练</span>
+      </a>
+      <a href="#history" data-route="history">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5l3 2M4.9 5A9 9 0 1 1 3 12H1l3-4 3 4H5"/></svg>
+        <span>历史</span>
+      </a>
+      <a href="#pr" data-route="pr">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v6a4 4 0 0 1-8 0zM8 6H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4m-4 2v4m-4 2h8"/></svg>
+        <span>PR</span>
+      </a>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="assertive"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
